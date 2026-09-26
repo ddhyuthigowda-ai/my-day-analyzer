@@ -1,0 +1,2097 @@
+/* =========================================================
+   MY DAY ANALYZER
+   PROFESSIONAL THEME SYSTEM
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   DEFAULT THEME
+========================================================= */
+
+:root {
+
+    --background: #f5f6fa;
+    --card: #ffffff;
+    --card-soft: #f9f9fc;
+
+    --text: #171717;
+    --secondary: #707070;
+
+    --border: #e5e5e5;
+
+    --primary: #6c63ff;
+    --primary-dark: #5148e5;
+
+    --green: #36a269;
+    --red: #e05252;
+    --yellow: #d89b20;
+
+    --graph-start: #6c63ff;
+    --graph-end: #5148e5;
+
+    --shadow:
+        0 8px 30px rgba(0, 0, 0, 0.06);
+
+    --radius: 18px;
+
+    --font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+}
+
+
+/* =========================================================
+   DARK THEME
+========================================================= */
+
+body.dark {
+
+    --background: #111318;
+    --card: #1b1e25;
+    --card-soft: #222631;
+
+    --text: #f5f5f5;
+    --secondary: #a7a7a7;
+
+    --border: #30343d;
+
+    --primary: #837cff;
+    --primary-dark: #6c63ff;
+
+    --graph-start: #837cff;
+    --graph-end: #5148e5;
+
+    --shadow:
+        0 8px 30px rgba(0, 0, 0, 0.30);
+
+}
+
+
+/* =========================================================
+   🌿 FOREST CALM
+========================================================= */
+
+body[data-theme="forest"] {
+
+    --background: #eef5ef;
+    --card: #ffffff;
+    --card-soft: #f5faf5;
+
+    --text: #203128;
+    --secondary: #66776c;
+
+    --border: #d8e6db;
+
+    --primary: #4f8a62;
+    --primary-dark: #376d49;
+
+    --graph-start: #76ad82;
+    --graph-end: #3f7951;
+
+}
+
+
+/* =========================================================
+   🌸 SAKURA
+========================================================= */
+
+body[data-theme="sakura"] {
+
+    --background: #fff4f7;
+    --card: #ffffff;
+    --card-soft: #fff9fb;
+
+    --text: #402d35;
+    --secondary: #8b707a;
+
+    --border: #f0d9e1;
+
+    --primary: #e78ca8;
+    --primary-dark: #c96788;
+
+    --graph-start: #f1a8bd;
+    --graph-end: #d96e91;
+
+}
+
+
+/* =========================================================
+   🧸 CUTE COZY
+========================================================= */
+
+body[data-theme="cozy"] {
+
+    --background: #fff8ee;
+    --card: #fffdf9;
+    --card-soft: #fffaf2;
+
+    --text: #493a30;
+    --secondary: #8b796b;
+
+    --border: #eadccd;
+
+    --primary: #d99068;
+    --primary-dark: #bd704b;
+
+    --graph-start: #e8a17d;
+    --graph-end: #c87850;
+
+}
+
+
+/* =========================================================
+   🌊 OCEAN BREEZE
+========================================================= */
+
+body[data-theme="ocean"] {
+
+    --background: #eef9fc;
+    --card: #ffffff;
+    --card-soft: #f6fdff;
+
+    --text: #183840;
+    --secondary: #65848b;
+
+    --border: #d5e9ed;
+
+    --primary: #35a8bd;
+    --primary-dark: #237f94;
+
+    --graph-start: #5cc6d8;
+    --graph-end: #238da5;
+
+}
+
+
+/* =========================================================
+   🌌 MIDNIGHT GALAXY
+========================================================= */
+
+body[data-theme="galaxy"] {
+
+    --background: #101322;
+    --card: #181c31;
+    --card-soft: #202540;
+
+    --text: #f5f3ff;
+    --secondary: #aaa9c4;
+
+    --border: #303653;
+
+    --primary: #9b8cff;
+    --primary-dark: #6e5be7;
+
+    --graph-start: #b2a5ff;
+    --graph-end: #6854dc;
+
+    --shadow:
+        0 8px 35px rgba(0, 0, 0, 0.4);
+
+}
+
+
+/* =========================================================
+   ☁️ CLOUD DREAM
+========================================================= */
+
+body[data-theme="cloud"] {
+
+    --background: #f5f4ff;
+    --card: #ffffff;
+    --card-soft: #faf9ff;
+
+    --text: #36334d;
+    --secondary: #7e7994;
+
+    --border: #e2def5;
+
+    --primary: #9889d9;
+    --primary-dark: #7565bd;
+
+    --graph-start: #b5a9ec;
+    --graph-end: #8170cc;
+
+}
+
+
+/* =========================================================
+   🍵 MATCHA
+========================================================= */
+
+body[data-theme="matcha"] {
+
+    --background: #f4f5e9;
+    --card: #fffff8;
+    --card-soft: #fafbea;
+
+    --text: #394032;
+    --secondary: #78806a;
+
+    --border: #dde2c9;
+
+    --primary: #8a9b58;
+    --primary-dark: #68783c;
+
+    --graph-start: #a8b879;
+    --graph-end: #758b45;
+
+}
+
+
+/* =========================================================
+   🌅 SUNSET
+========================================================= */
+
+body[data-theme="sunset"] {
+
+    --background: #fff3ed;
+    --card: #ffffff;
+    --card-soft: #fff9f5;
+
+    --text: #46312d;
+    --secondary: #8d7068;
+
+    --border: #f0ddd4;
+
+    --primary: #ed8068;
+    --primary-dark: #d85e48;
+
+    --graph-start: #f2a083;
+    --graph-end: #dc624d;
+
+}
+
+
+/* =========================================================
+   🖤 ELEGANT NOIR
+========================================================= */
+
+body[data-theme="noir"] {
+
+    --background: #101010;
+    --card: #191919;
+    --card-soft: #222222;
+
+    --text: #f2f2f2;
+    --secondary: #9b9b9b;
+
+    --border: #303030;
+
+    --primary: #d1b47a;
+    --primary-dark: #a88a52;
+
+    --graph-start: #e0c58c;
+    --graph-end: #a88a52;
+
+    --shadow:
+        0 10px 35px rgba(0, 0, 0, 0.4);
+
+}
+
+
+/* =========================================================
+   💜 LAVENDER DREAM
+========================================================= */
+
+body[data-theme="lavender"] {
+
+    --background: #f7f2ff;
+    --card: #ffffff;
+    --card-soft: #fbf8ff;
+
+    --text: #3d304d;
+    --secondary: #806f91;
+
+    --border: #e6d9f3;
+
+    --primary: #9b72c5;
+    --primary-dark: #7951a5;
+
+    --graph-start: #b491dc;
+    --graph-end: #8058ad;
+
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+
+    font-family: var(--font-family);
+
+    background: var(--background);
+
+    color: var(--text);
+
+    min-height: 100vh;
+
+    padding-bottom: 40px;
+
+    transition:
+        background 0.35s ease,
+        color 0.35s ease;
+
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+
+    height: 70px;
+
+    background: var(--card);
+
+    border-bottom:
+        1px solid var(--border);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0 5%;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    transition:
+        background 0.3s,
+        border 0.3s;
+
+}
+
+
+.logo {
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+}
+
+
+.nav-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+
+.nav-link {
+
+    text-decoration: none;
+
+    padding:
+        10px 14px;
+
+    border-radius: 10px;
+
+}
+
+
+.nav-link:hover {
+
+    background: var(--background);
+
+}
+
+
+/* =========================================================
+   THEME BUTTON
+========================================================= */
+
+.theme-button {
+
+    width: 42px;
+
+    height: 42px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 50%;
+
+    background: var(--card);
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition:
+        transform 0.2s,
+        background 0.3s;
+
+}
+
+
+.theme-button:hover {
+
+    transform: scale(1.08);
+
+}
+
+
+/* =========================================================
+   THEME PANEL
+========================================================= */
+
+.theme-panel {
+
+    position: fixed;
+
+    top: 78px;
+
+    right: 25px;
+
+    width: 340px;
+
+    max-width: calc(100vw - 30px);
+
+    background: var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.15);
+
+    z-index: 2000;
+
+    display: none;
+
+    animation:
+        themePanelIn 0.2s ease;
+
+}
+
+
+.theme-panel.show {
+
+    display: block;
+
+}
+
+
+@keyframes themePanelIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-8px)
+            scale(0.98);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+.theme-panel-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 16px;
+
+}
+
+
+.theme-panel-header h3 {
+
+    font-size: 18px;
+
+}
+
+
+.theme-panel-header p {
+
+    color: var(--secondary);
+
+    font-size: 12px;
+
+    margin-top: 3px;
+
+}
+
+
+.close-theme {
+
+    width: 32px;
+
+    height: 32px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+}
+
+
+/* =========================================================
+   THEME GRID
+========================================================= */
+
+.theme-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+
+}
+
+
+.theme-option {
+
+    border:
+        1px solid var(--border);
+
+    background: var(--background);
+
+    border-radius: 14px;
+
+    padding: 10px;
+
+    cursor: pointer;
+
+    color: var(--text);
+
+    text-align: left;
+
+    transition:
+        transform 0.2s,
+        border 0.2s;
+
+}
+
+
+.theme-option:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+.theme-option.active {
+
+    border:
+        2px solid var(--primary);
+
+}
+
+
+.theme-preview {
+
+    height: 45px;
+
+    border-radius: 9px;
+
+    margin-bottom: 8px;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* Individual preview colors */
+
+.preview-light {
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #ececff
+    );
+}
+
+.preview-dark {
+    background: linear-gradient(
+        135deg,
+        #111318,
+        #30343d
+    );
+}
+
+.preview-forest {
+    background: linear-gradient(
+        135deg,
+        #dceede,
+        #4f8a62
+    );
+}
+
+.preview-sakura {
+    background: linear-gradient(
+        135deg,
+        #ffe8ef,
+        #e78ca8
+    );
+}
+
+.preview-cozy {
+    background: linear-gradient(
+        135deg,
+        #fff1d9,
+        #d99068
+    );
+}
+
+.preview-ocean {
+    background: linear-gradient(
+        135deg,
+        #dff8fc,
+        #35a8bd
+    );
+}
+
+.preview-galaxy {
+    background: linear-gradient(
+        135deg,
+        #11162b,
+        #8171e7
+    );
+}
+
+.preview-cloud {
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #b5a9ec
+    );
+}
+
+.preview-matcha {
+    background: linear-gradient(
+        135deg,
+        #f4f5e9,
+        #8a9b58
+    );
+}
+
+.preview-sunset {
+    background: linear-gradient(
+        135deg,
+        #ffe0d2,
+        #ed8068
+    );
+}
+
+.preview-noir {
+    background: linear-gradient(
+        135deg,
+        #101010,
+        #d1b47a
+    );
+}
+
+.preview-lavender {
+    background: linear-gradient(
+        135deg,
+        #f5eaff,
+        #9b72c5
+    );
+}
+
+
+.theme-name {
+
+    font-weight: bold;
+
+    font-size: 13px;
+
+}
+
+
+.theme-description {
+
+    font-size: 10px;
+
+    color: var(--secondary);
+
+    margin-top: 2px;
+
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.container {
+
+    width: 92%;
+
+    max-width: 1150px;
+
+    margin:
+        30px auto;
+
+}
+
+
+/* =========================================================
+   DATE NAVIGATION
+========================================================= */
+
+.date-navigation {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.current-date {
+
+    text-align: center;
+
+}
+
+
+.current-date h1 {
+
+    font-size: 28px;
+
+}
+
+
+.current-date p {
+
+    color: var(--secondary);
+
+    margin-top: 5px;
+
+}
+
+
+.date-arrow {
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: var(--card);
+
+    border:
+        1px solid var(--border);
+
+    color: var(--text);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none;
+
+    font-size: 22px;
+
+}
+
+
+/* =========================================================
+   PRODUCTIVITY
+========================================================= */
+
+.productivity-card {
+
+    background: var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 22px;
+
+    padding: 30px;
+
+    box-shadow: var(--shadow);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+}
+
+
+.small-title {
+
+    color: var(--secondary);
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+}
+
+
+.big-percentage {
+
+    font-size: 58px;
+
+    font-weight: 900;
+
+    margin:
+        8px 0;
+
+}
+
+
+.circle-progress {
+
+    width: 120px;
+
+    height: 120px;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            var(--primary)
+            var(--progress),
+            var(--border) 0
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.circle-value {
+
+    width: 92px;
+
+    height: 92px;
+
+    border-radius: 50%;
+
+    background: var(--card);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================================
+   PANELS
+========================================================= */
+
+.panel {
+
+    background: var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    box-shadow: var(--shadow);
+
+    margin-bottom: 25px;
+
+}
+
+
+.panel-title {
+
+    margin-bottom: 20px;
+
+}
+
+
+.panel-title h2 {
+
+    font-size: 20px;
+
+}
+
+
+.panel-title p {
+
+    color: var(--secondary);
+
+    margin-top: 5px;
+
+}
+
+
+.panel-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+}
+
+
+.panel-heading p {
+
+    color: var(--secondary);
+
+    margin-top: 5px;
+
+}
+
+
+.task-count {
+
+    background: var(--background);
+
+    padding:
+        8px 13px;
+
+    border-radius: 20px;
+
+    color: var(--secondary);
+
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.task-form {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+}
+
+
+.form-group.full {
+
+    grid-column:
+        1 / -1;
+
+}
+
+
+.form-group label {
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+}
+
+
+.form-group label span {
+
+    color: var(--secondary);
+
+    font-weight: normal;
+
+}
+
+
+input,
+select {
+
+    width: 100%;
+
+    padding:
+        13px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    outline: none;
+
+    font-size: 14px;
+
+}
+
+
+input:focus,
+select:focus {
+
+    border-color:
+        var(--primary);
+
+}
+
+
+.form-submit {
+
+    grid-column:
+        1 / -1;
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+
+.primary-button,
+.cancel-button {
+
+    padding:
+        13px 20px;
+
+    border-radius: 10px;
+
+    border: none;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+}
+
+
+.primary-button {
+
+    background: var(--primary);
+
+    color: white;
+
+}
+
+
+.primary-button:hover {
+
+    background:
+        var(--primary-dark);
+
+}
+
+
+.cancel-button {
+
+    background: var(--background);
+
+    border:
+        1px solid var(--border);
+
+    color: var(--text);
+
+}
+
+
+/* =========================================================
+   EVENTS
+========================================================= */
+
+.event-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+
+.event-card {
+
+    display: grid;
+
+    grid-template-columns:
+        90px 1fr auto;
+
+    align-items: center;
+
+    gap: 15px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 15px;
+
+    padding: 17px;
+
+    background: var(--background);
+
+    transition:
+        transform 0.2s,
+        background 0.3s;
+
+}
+
+
+.event-card:hover {
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.event-time {
+
+    font-weight: bold;
+
+    color: var(--primary);
+
+}
+
+
+.event-main h3 {
+
+    margin-bottom: 8px;
+
+}
+
+
+.event-meta {
+
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.priority-badge,
+.repeat-badge {
+
+    font-size: 11px;
+
+    padding:
+        5px 9px;
+
+    border-radius: 20px;
+
+}
+
+
+.priority-badge.high {
+
+    background: #ffe0e0;
+
+    color: #b52e2e;
+
+}
+
+
+.priority-badge.medium {
+
+    background: #fff1c9;
+
+    color: #986c00;
+
+}
+
+
+.priority-badge.low {
+
+    background: #dcf5e4;
+
+    color: #247744;
+
+}
+
+
+.repeat-badge {
+
+    background: color-mix(
+        in srgb,
+        var(--primary) 15%,
+        transparent
+    );
+
+    color: var(--primary);
+
+}
+
+
+.event-actions {
+
+    display: flex;
+
+    gap: 7px;
+
+    align-items: center;
+
+}
+
+
+.event-actions a {
+
+    text-decoration: none;
+
+    padding:
+        8px 11px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+}
+
+
+.done-button {
+
+    background: #ddf5e5;
+
+    color: #21753f;
+
+}
+
+
+.completed-button {
+
+    background: var(--primary);
+
+    color: white;
+
+}
+
+
+.edit-button {
+
+    background: var(--card);
+
+    border:
+        1px solid var(--border);
+
+}
+
+
+.delete-button {
+
+    background: #ffe3e3;
+
+}
+
+
+.event-completed {
+
+    opacity: 0.58;
+
+}
+
+
+.event-completed h3 {
+
+    text-decoration: line-through;
+
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.empty-state {
+
+    text-align: center;
+
+    padding: 50px 20px;
+
+}
+
+
+.empty-icon {
+
+    font-size: 45px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.empty-state p {
+
+    color: var(--secondary);
+
+    margin-top: 7px;
+
+}
+
+
+/* =========================================================
+   ANALYTICS
+========================================================= */
+
+.analytics-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+    gap: 20px;
+
+}
+
+
+.analytics-header h1 {
+
+    font-size: 30px;
+
+}
+
+
+.analytics-header p {
+
+    color: var(--secondary);
+
+    margin-top: 7px;
+
+}
+
+
+.month-selector {
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+
+.month-selector select {
+
+    min-width: 130px;
+
+}
+
+
+.analytics-summary {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.summary-card {
+
+    background: var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 20px;
+
+    box-shadow: var(--shadow);
+
+}
+
+
+.summary-card span {
+
+    display: block;
+
+    color: var(--secondary);
+
+    font-size: 13px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.summary-card strong {
+
+    font-size: 28px;
+
+}
+
+
+.analytics-card {
+
+    background: var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    box-shadow: var(--shadow);
+
+    margin-bottom: 20px;
+
+}
+
+
+.analytics-card-header {
+
+    margin-bottom: 25px;
+
+}
+
+
+.analytics-card-header h2 {
+
+    font-size: 20px;
+
+}
+
+
+.analytics-card-header p {
+
+    color: var(--secondary);
+
+    margin-top: 5px;
+
+}
+
+
+/* =========================================================
+   BAR GRAPHS
+========================================================= */
+
+.bar-chart {
+
+    height: 330px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 8px;
+
+    border-bottom:
+        1px solid var(--border);
+
+    padding:
+        20px 5px 0;
+
+    overflow-x: auto;
+
+}
+
+
+.bar-column {
+
+    height: 100%;
+
+    min-width: 35px;
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+}
+
+
+.bar-value {
+
+    font-size: 10px;
+
+    color: var(--secondary);
+
+    min-height: 15px;
+
+}
+
+
+.bar-wrapper {
+
+    width: 100%;
+
+    max-width: 32px;
+
+    height: 250px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+}
+
+
+.bar {
+
+    width: 100%;
+
+    min-height: 2px;
+
+    background:
+        linear-gradient(
+            to top,
+            var(--graph-end),
+            var(--graph-start)
+        );
+
+    border-radius:
+        6px 6px 0 0;
+
+    transition:
+        height 0.3s ease;
+
+}
+
+
+.bar-label {
+
+    font-size: 11px;
+
+    color: var(--secondary);
+
+    margin-top: 8px;
+
+}
+
+
+.weekly-chart .bar-column {
+
+    min-width: 80px;
+
+}
+
+
+.weekly-chart .bar-wrapper {
+
+    max-width: 50px;
+
+}
+
+
+.monthly-chart .bar-column {
+
+    min-width: 50px;
+
+}
+
+
+.monthly-chart .bar-wrapper {
+
+    max-width: 40px;
+
+}
+
+
+/* =========================================================
+   ANALYSIS
+========================================================= */
+
+.analysis-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin:
+        20px 0;
+
+}
+
+
+.analysis-item {
+
+    padding: 17px;
+
+    background: var(--background);
+
+    border-radius: 12px;
+
+}
+
+
+.analysis-item span {
+
+    display: block;
+
+    color: var(--secondary);
+
+    font-size: 13px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.analysis-item strong {
+
+    font-size: 20px;
+
+}
+
+
+.analysis-message {
+
+    padding: 17px;
+
+    border-radius: 12px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   EDIT
+========================================================= */
+
+.edit-panel {
+
+    max-width: 750px;
+
+    margin:
+        40px auto;
+
+}
+
+
+.edit-panel h1 {
+
+    margin-bottom: 7px;
+
+}
+
+
+.edit-description {
+
+    color: var(--secondary);
+
+    margin-bottom: 25px;
+
+}
+
+
+/* =========================================================
+   MOBILE NAV
+========================================================= */
+
+.mobile-nav {
+
+    display: none;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    body {
+
+        padding-bottom: 80px;
+
+    }
+
+
+    .navbar {
+
+        height: 60px;
+
+        padding:
+            0 4%;
+
+    }
+
+
+    .logo {
+
+        font-size: 18px;
+
+    }
+
+
+    .navbar .nav-buttons {
+
+        display: none;
+
+    }
+
+
+    .container {
+
+        width: 94%;
+
+        margin-top: 20px;
+
+    }
+
+
+    .date-navigation {
+
+        gap: 15px;
+
+    }
+
+
+    .current-date h1 {
+
+        font-size: 23px;
+
+    }
+
+
+    .productivity-card {
+
+        padding: 22px;
+
+    }
+
+
+    .big-percentage {
+
+        font-size: 45px;
+
+    }
+
+
+    .circle-progress {
+
+        width: 90px;
+
+        height: 90px;
+
+    }
+
+
+    .circle-value {
+
+        width: 70px;
+
+        height: 70px;
+
+    }
+
+
+    .task-form {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .form-group.full {
+
+        grid-column: auto;
+
+    }
+
+
+    .form-submit {
+
+        grid-column: auto;
+
+    }
+
+
+    .panel {
+
+        padding: 18px;
+
+    }
+
+
+    .event-card {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 10px;
+
+    }
+
+
+    .event-actions {
+
+        width: 100%;
+
+    }
+
+
+    .event-actions a {
+
+        flex: 1;
+
+        text-align: center;
+
+    }
+
+
+    .analytics-header {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+
+    .analytics-header h1 {
+
+        font-size: 24px;
+
+    }
+
+
+    .month-selector {
+
+        width: 100%;
+
+    }
+
+
+    .month-selector select {
+
+        flex: 1;
+
+        min-width: 0;
+
+    }
+
+
+    .analytics-summary {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .analysis-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .bar-chart {
+
+        height: 280px;
+
+        gap: 4px;
+
+    }
+
+
+    .bar-wrapper {
+
+        height: 200px;
+
+    }
+
+
+    .bar-column {
+
+        min-width: 25px;
+
+    }
+
+
+    .bar-label {
+
+        font-size: 9px;
+
+    }
+
+
+    .bar-value {
+
+        font-size: 8px;
+
+    }
+
+
+    .mobile-nav {
+
+        position: fixed;
+
+        display: flex;
+
+        bottom: 0;
+
+        left: 0;
+
+        right: 0;
+
+        height: 65px;
+
+        background: var(--card);
+
+        border-top:
+            1px solid var(--border);
+
+        z-index: 999;
+
+        justify-content: space-around;
+
+        align-items: center;
+
+    }
+
+
+    .mobile-nav a,
+    .mobile-nav button {
+
+        background: none;
+
+        border: none;
+
+        text-decoration: none;
+
+        color: var(--text);
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 3px;
+
+        font-size: 18px;
+
+        cursor: pointer;
+
+    }
+
+
+    .mobile-nav span {
+
+        font-size: 10px;
+
+    }
+
+
+    .theme-panel {
+
+        top: 65px;
+
+        right: 10px;
+
+        width: calc(100vw - 20px);
+
+        max-height: 75vh;
+
+        overflow-y: auto;
+
+    }
+
+}

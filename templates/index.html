@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Day Analyzer</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        My Day Analyzer
+    </div>
+
+    <div class="nav-buttons">
+
+        <a href="/" class="nav-link">
+            🏠 Home
+        </a>
+
+        <a href="/analytics" class="nav-link">
+            📊 Analytics
+        </a>
+
+        <button
+            onclick="toggleTheme()"
+            class="theme-button"
+            id="themeButton"
+        >
+            🌙
+        </button>
+
+    </div>
+
+</nav>
+
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     DATE NAVIGATION
+===================================================== -->
+
+<section class="date-navigation">
+
+    <a
+        href="/?date={{ previous_date }}"
+        class="date-arrow"
+    >
+        ←
+    </a>
+
+
+    <div class="current-date">
+
+        <h1>
+            {{ selected_date.strftime('%A') }}
+        </h1>
+
+        <p>
+            {{ selected_date.strftime('%d %B %Y') }}
+        </p>
+
+    </div>
+
+
+    <a
+        href="/?date={{ next_date }}"
+        class="date-arrow"
+    >
+        →
+    </a>
+
+</section>
+
+
+<!-- =====================================================
+     PRODUCTIVITY
+===================================================== -->
+
+<section class="productivity-card">
+
+    <div>
+
+        <p class="small-title">
+            TODAY'S PRODUCTIVITY
+        </p>
+
+        <div class="big-percentage">
+            {{ percentage }}%
+        </div>
+
+        <p>
+            {{ completed }} of {{ total }} events completed
+        </p>
+
+    </div>
+
+
+    <div class="circle-progress">
+
+        <div
+            class="circle-value"
+            style="--progress: {{ percentage }}%;"
+        >
+
+            {{ percentage }}%
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ADD EVENT
+===================================================== -->
+
+<section class="panel">
+
+    <div class="panel-title">
+
+        <div>
+
+            <h2>
+                ➕ Add Task / Event
+            </h2>
+
+            <p>
+                Create a one-time task or recurring routine.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <form
+        action="/add"
+        method="POST"
+        class="task-form"
+    >
+
+
+        <div class="form-group full">
+
+            <label>
+                Task / Event name
+            </label>
+
+            <input
+                type="text"
+                name="title"
+                placeholder="Example: Study Python"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Time
+            </label>
+
+            <input
+                type="time"
+                name="event_time"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Priority
+            </label>
+
+            <select name="priority">
+
+                <option value="High">
+                    🔴 High
+                </option>
+
+                <option
+                    value="Medium"
+                    selected
+                >
+                    🟡 Medium
+                </option>
+
+                <option value="Low">
+                    🟢 Low
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Type
+            </label>
+
+            <select name="event_type">
+
+                <option value="task">
+                    📌 One-time Task
+                </option>
+
+                <option value="event">
+                    🔄 Routine / Event
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Repeat
+            </label>
+
+            <select name="recurrence">
+
+                <option value="none">
+                    Don't repeat
+                </option>
+
+                <option value="daily">
+                    Every day
+                </option>
+
+                <option value="weekdays">
+                    Weekdays
+                </option>
+
+                <option value="weekly">
+                    Every week
+                </option>
+
+                <option value="monthly">
+                    Every month
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Start date
+            </label>
+
+            <input
+                type="date"
+                name="start_date"
+                value="{{ selected_date.isoformat() }}"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                End date
+                <span>(optional)</span>
+            </label>
+
+            <input
+                type="date"
+                name="end_date"
+            >
+
+        </div>
+
+
+        <div class="form-submit">
+
+            <button
+                type="submit"
+                class="primary-button"
+            >
+                + Add to Schedule
+            </button>
+
+        </div>
+
+
+    </form>
+
+</section>
+
+
+
+<!-- =====================================================
+     TODAY'S SCHEDULE
+===================================================== -->
+
+<section class="panel">
+
+    <div class="panel-heading">
+
+        <div>
+
+            <h2>
+                📅 Today's Schedule
+            </h2>
+
+            <p>
+                Your tasks and recurring events.
+            </p>
+
+        </div>
+
+        <span class="task-count">
+            {{ total }} items
+        </span>
+
+    </div>
+
+
+    {% if events %}
+
+
+        <div class="event-list">
+
+
+        {% for event in events %}
+
+
+            <div
+                class="event-card
+                {% if event.completed %}
+                    event-completed
+                {% endif %}
+                "
+            >
+
+
+                <div class="event-time">
+
+                    {{ event.event_time }}
+
+                </div>
+
+
+                <div class="event-main">
+
+                    <h3>
+                        {{ event.title }}
+                    </h3>
+
+
+                    <div class="event-meta">
+
+                        <span
+                            class="priority-badge
+                            {{ event.priority|lower }}"
+                        >
+                            {{ event.priority }}
+                        </span>
+
+
+                        {% if event.recurrence != 'none' %}
+
+                            <span class="repeat-badge">
+
+                                🔄
+
+                                {% if event.recurrence == 'daily' %}
+                                    Daily
+                                {% elif event.recurrence == 'weekdays' %}
+                                    Weekdays
+                                {% elif event.recurrence == 'weekly' %}
+                                    Weekly
+                                {% elif event.recurrence == 'monthly' %}
+                                    Monthly
+                                {% endif %}
+
+                            </span>
+
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+
+                <div class="event-actions">
+
+
+                    {% if event.completed %}
+
+                        <a
+                            href="/uncomplete/{{ event.id }}/{{ selected_date.isoformat() }}"
+                            class="completed-button"
+                        >
+                            ✓ Done
+                        </a>
+
+                    {% else %}
+
+                        <a
+                            href="/complete/{{ event.id }}/{{ selected_date.isoformat() }}"
+                            class="done-button"
+                        >
+                            ✓ Complete
+                        </a>
+
+                    {% endif %}
+
+
+                    <a
+                        href="/edit/{{ event.id }}"
+                        class="edit-button"
+                    >
+                        ✏️
+                    </a>
+
+
+                    <a
+                        href="/delete/{{ event.id }}"
+                        class="delete-button"
+                        onclick="return confirm('Delete this event?')"
+                    >
+                        🗑
+                    </a>
+
+
+                </div>
+
+            </div>
+
+
+        {% endfor %}
+
+
+        </div>
+
+
+    {% else %}
+
+
+        <div class="empty-state">
+
+            <div class="empty-icon">
+                📅
+            </div>
+
+            <h3>
+                Nothing scheduled
+            </h3>
+
+            <p>
+                Add your first task or recurring routine above.
+            </p>
+
+        </div>
+
+
+    {% endif %}
+
+
+</section>
+
+
+</div>
+
+
+<!-- Mobile navigation -->
+
+<div class="mobile-nav">
+
+    <a href="/">
+        🏠
+        <span>Home</span>
+    </a>
+
+    <a href="/analytics">
+        📊
+        <span>Analytics</span>
+    </a>
+
+    <button onclick="toggleTheme()">
+        🌙
+        <span>Theme</span>
+    </button>
+
+</div>
+
+
+<script
+    src="{{ url_for('static', filename='script.js') }}"
+></script>
+
+
+</body>
+
+</html>
