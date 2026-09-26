@@ -1,0 +1,106 @@
+My Day Analyzer is a simple web-based productivity application designed to help users record, organize, and analyze their daily activities.
+
+The application provides an easy-to-use interface for managing daily activities and viewing useful analytics about how time is being spent.
+
+## ✨ Features
+
+* 📝 Add and manage daily activities
+* ✏️ Edit existing activities
+* 📊 View activity analytics
+* 📅 Organize daily tasks and activities
+* 💻 Simple and responsive web interface
+* 🗄️ SQLite database for storing application data
+* 🎨 HTML, CSS, and JavaScript-based frontend
+* ⚡ Flask-powered Python backend
+
+## 🛠️ Technologies Used
+
+* **Python**
+* **Flask**
+* **SQLite**
+* **HTML5**
+* **CSS3**
+* **JavaScript**
+
+## 📁 Project Structure
+
+```text
+my-day-analyzer/
+│
+├── app.py
+├── database.db
+│
+├── static/
+│   ├── script.js
+│   └── style.css
+│
+├── templates/
+│   ├── index.html
+│   ├── edit.html
+│   └── analytics.html
+│
+├── .gitignore
+└── README.md
+```
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/ddhyuthigowda-ai/my-day-analyzer.git
+```
+
+### 2. Open the project
+
+```bash
+cd my-day-analyzer
+```
+
+### 3. Create a virtual environment
+
+Windows:
+
+```powershell
+python -m venv venv
+```
+
+### 4. Activate the virtual environment
+
+PowerShell:
+
+```powershell
+venv\Scripts\Activate.ps1
+```
+
+If successful, your terminal should show:
+
+```text
+(venv)
+```
+
+### 5. Install dependencies
+
+If a `requirements.txt` file is included:
+
+```powershell
+pip install -r requirements.txt
+```
+
+### 6. Run the application
+
+```powershell
+python app.py
+```
+
+You should see Flask start the development server.
+
+Open the local address shown in your terminal, usually:
+
+```text
+http://127.0.0.1:5000
+```
+
+## 📊 How It Works
+
+The application uses
